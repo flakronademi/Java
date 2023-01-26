@@ -77,9 +77,9 @@ INSERT INTO `books` (`id`, `name`, `author`, `description`) VALUES
 --
 
 CREATE TABLE `costumer` (
-                            `id` int(11) NOT NULL,
-                            `name` varchar(50) NOT NULL,
-                            `surname` varchar(50) NOT NULL
+`id` int(11) NOT NULL,
+`name` varchar(50) NOT NULL,
+`surname` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
