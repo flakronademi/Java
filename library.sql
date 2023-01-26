@@ -1,11 +1,11 @@
--- phpMyAdmin SQL Dump
--- version 5.0.3
--- https://www.phpmyadmin.net/
---
--- Host: localhost
--- Generation Time: Jan 20, 2022 at 06:01 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.2.34
+ -- phpMyAdmin SQL Dump
+ -- version 5.0.3
+ -- https://www.phpmyadmin.net/
+ --
+ -- Host: localhost
+ -- Generation Time: Jan 20, 2023 at 03:13 PM
+ -- Server version: 10.4.14-MariaDB
+ -- PHP Version: 7.2.34
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -30,11 +30,11 @@ USE `library`;
 --
 
 CREATE TABLE `booking` (
-  `id` int(11) NOT NULL,
-  `bookid` int(11) NOT NULL,
-  `costumerid` int(11) NOT NULL,
-  `loaned` date NOT NULL,
-  `returned` date NOT NULL
+`id` int(11) NOT NULL,
+`bookid` int(11) NOT NULL,
+`costumerid` int(11) NOT NULL,
+`loaned` date NOT NULL,
+`returned` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -53,10 +53,10 @@ INSERT INTO `booking` (`id`, `bookid`, `costumerid`, `loaned`, `returned`) VALUE
 --
 
 CREATE TABLE `books` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `author` varchar(50) NOT NULL,
-  `description` varchar(150) NOT NULL
+ `id` int(11) NOT NULL,
+ `name` varchar(50) NOT NULL,
+ `author` varchar(50) NOT NULL,
+ `description` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -64,11 +64,11 @@ CREATE TABLE `books` (
 --
 
 INSERT INTO `books` (`id`, `name`, `author`, `description`) VALUES
-(2, 'Test', 'Flakron Ademi', 'ss'),
-(3, 'Test', 'Flakron Ademi', 'ss'),
-(4, 'Test', 'Driton Adili', 'ss'),
-(5, 'Test', 'Driton Adili', 'ss'),
-(6, 'Test', 'Flakron Driton', 'ss');
+(2, 'Lorem', 'Flakron Ademi', 'Lorem ipsum dolor sit amet,'),
+(3, 'Ipsum', 'Flakron Ademi', 'consectetur adipiscing elit'),
+(4, 'Dolor', 'Driton Adili', 'ed do eiusmod tempor incididun'),
+(5, 'Sit', 'Driton Adili', 'Ut enim ad minim'),
+(6, 'Elit', 'Flakron Driton', 'quis nostrud exercitation ullamco labori');
 
 -- --------------------------------------------------------
 
@@ -77,9 +77,9 @@ INSERT INTO `books` (`id`, `name`, `author`, `description`) VALUES
 --
 
 CREATE TABLE `costumer` (
-  `id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `surname` varchar(50) NOT NULL
+                            `id` int(11) NOT NULL,
+                            `name` varchar(50) NOT NULL,
+                            `surname` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -98,21 +98,21 @@ INSERT INTO `costumer` (`id`, `name`, `surname`) VALUES
 -- Indexes for table `booking`
 --
 ALTER TABLE `booking`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `bookid` (`bookid`),
-  ADD KEY `costumerid` (`costumerid`);
+    ADD PRIMARY KEY (`id`),
+    ADD KEY `bookid` (`bookid`),
+    ADD KEY `costumerid` (`costumerid`);
 
 --
 -- Indexes for table `books`
 --
 ALTER TABLE `books`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `costumer`
 --
 ALTER TABLE `costumer`
-  ADD PRIMARY KEY (`id`);
+    ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -122,19 +122,19 @@ ALTER TABLE `costumer`
 -- AUTO_INCREMENT for table `booking`
 --
 ALTER TABLE `booking`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `books`
 --
 ALTER TABLE `books`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `costumer`
 --
 ALTER TABLE `costumer`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -144,8 +144,8 @@ ALTER TABLE `costumer`
 -- Constraints for table `booking`
 --
 ALTER TABLE `booking`
-  ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`bookid`) REFERENCES `books` (`id`),
-  ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`costumerid`) REFERENCES `costumer` (`id`);
+    ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`bookid`) REFERENCES `books` (`id`),
+    ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`costumerid`) REFERENCES `costumer` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
