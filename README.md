@@ -112,7 +112,7 @@ Response:
 "description": "A novel about the decadence and excess of the Roaring Twenties in America."
 }
 
-2.URL: http://localhost:8080/book/ Get Book by id - METHOD = GET
+2.URL: http://localhost:8080/librarybook/ Get Book by id - METHOD = GET
 
 Response: {
 "id": 6,
@@ -120,7 +120,7 @@ Response: {
 "author": "F. Scott Fitzgerald",
 "description": "A novel about the decadence and excess of the Roaring Twenties in America."
 }
-3.URL: http://localhost:8080/book/ Edit Book by id - METHOD = PUT
+3.URL: http://localhost:8080/librarybook/ Edit Book by id - METHOD = PUT
 
 Response: {
 "id": 5,
@@ -128,7 +128,7 @@ Response: {
 "author": "Test Test",
 "description": "Test"
 }
-4.URL: http://localhost:8080/book/ Add Book- METHOD = POST
+4.URL: http://localhost:8080/librarybook/ Add Book- METHOD = POST
 
 Response: 
 { "id": 7,
@@ -137,7 +137,7 @@ Response:
 "description": "Lorem ipsum dolor sit amet"
 }
 
-5.URL: http://localhost:8080/book/ Delete Book by id- METHOD = DELETE
+5.URL: http://localhost:8080/librarybook/ Delete Book by id- METHOD = DELETE
 
 Response : true
 
