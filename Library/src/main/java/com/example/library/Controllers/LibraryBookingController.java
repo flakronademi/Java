@@ -26,7 +26,7 @@ public class LibraryBookingController {
 		return libraryBookingServices.findBookingById(id);
 	}
 
-	@PostMapping("/booking")
+	@PostMapping("/librarybooking")
 	public LibraryBooking createBooking(@RequestBody LibraryBookingInput libraryBookingInput) {
 		return libraryBookingServices.save(libraryBookingInput);
 	}
