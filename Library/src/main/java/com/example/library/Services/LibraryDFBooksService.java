@@ -44,11 +44,11 @@ public class LibraryDFBooksService implements LibraryBooksService {
 	@Override
 	public LibraryBooks update(LibraryBooks book, LibraryBookInput libraryBookInput) {
 		String updateName = libraryBookInput.getName();
-		String udpateAuthor = libraryBookInput.getAuthor();
+		String updateAuthor = libraryBookInput.getAuthor();
 		String updateDescription = libraryBookInput.getDescription();
 
 		book.setName(updateName);
-		book.setAuthor(udpateAuthor);
+		book.setAuthor(updateAuthor);
 		book.setDescription(updateDescription);
 
 

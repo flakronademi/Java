@@ -54,4 +54,29 @@ VALUES (1, 'John', 'Doe'),
        (4, 'Jill', 'Johnson'),
        (5, 'Jim', 'Brown');
 
+ALTER TABLE `libraryBooking`
+    ADD PRIMARY KEY (`id`),
+    ADD KEY `bookid` (`bookid`),
+    ADD KEY `costumerid` (`costumerid`);
+
+
+ALTER TABLE `libraryBooks`
+    ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `libraryCostumer`
+    ADD PRIMARY KEY (`id`);
+
+ALTER TABLE `libraryBooking`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+ALTER TABLE `libraryBooks`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+
+ALTER TABLE `libraryCostumer`
+    MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+ALTER TABLE `libraryBooking`
+    ADD CONSTRAINT `booking_ibfk_1` FOREIGN KEY (`bookid`) REFERENCES `libraryBooks` (`id`),
+    ADD CONSTRAINT `booking_ibfk_2` FOREIGN KEY (`costumerid`) REFERENCES `libraryCostumer` (`id`);
 COMMIT;
